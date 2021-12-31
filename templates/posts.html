@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% block title %}
+Posts
+{% endblock %}
+{% block content %}
+{% for articl in articles %}
+<div class="container py-3-5 d-grid gap-3">
+    <div class="alert alert-primary p-2 mt-3">
+        <h2>{{ articl.title }}</h2>
+        <p>{{ articl.intro }}</p>
+        <p><b>Дата: {{ articl.date.date() }}</b></p>
+        <a href="posts/{{articl.id}}" class="btn btn-warning">Детальнее</a>
+    </div>
+</div>
+{% endfor %}
+{% endblock %}
